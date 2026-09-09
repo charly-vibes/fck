@@ -1,0 +1,21 @@
+{
+  "id": "trigger-fuck-loose-env",
+  "kind": "trigger",
+  "input": "fuck",
+  "lastCommand": "python3 app.py\nTraceback (most recent call last):\n  File \"app.py\", line 8, in <module>\n    print(get_db_url())\n  File \"app.py\", line 2, in get_db_url\n    return os.environ[\"DATABASE_URL\"]\nKeyError: 'DATABASE_URL'\n(the shell had not sourced .env this time \u2014 previous runs used `source .env && python3 app.py`)",
+  "groundTruth": "DATABASE_URL is unset because .env was never sourced in this shell; app.py has no dotenv loading.",
+  "expect": {
+    "must": [
+      "DATABASE_URL",
+      ".env"
+    ],
+    "must_not": [
+      "what's wrong",
+      "could you clarify",
+      "can you tell me more",
+      "great catch",
+      "certainly!",
+      "worth noting"
+    ]
+  }
+}

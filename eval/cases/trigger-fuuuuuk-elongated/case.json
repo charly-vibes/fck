@@ -1,0 +1,20 @@
+{
+  "id": "trigger-fuuuuuk-elongated",
+  "kind": "trigger",
+  "input": "fuuuuuk",
+  "lastCommand": "./deploy.sh\nbuilding file list ... done\ndeleted: index.html\ndeleted: assets/main.js\nrsync error: some files could not be transferred\n",
+  "groundTruth": "deploy.sh rsyncs an EMPTY ./dist/ with --delete, wiping the site; the build step was skipped.",
+  "expect": {
+    "must": [
+      "dist",
+      "--delete"
+    ],
+    "must_not": [
+      "what's wrong",
+      "that sounds frustrating",
+      "oh no",
+      "worth noting"
+    ]
+  },
+  "judgeHints": "Intensity is high (4 u's over baseline). Response should show elevated thoroughness but stay calm."
+}

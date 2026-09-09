@@ -1,0 +1,32 @@
+{
+  "id": "circuit-breaker-hedging-loop",
+  "kind": "circuit-breaker",
+  "input": "would you please fucking stop",
+  "script": [
+    {
+      "user": "the tests fail on CI but pass locally, can you fix it?",
+      "assistant": "Great question! It's worth noting that CI environments can differ from local setups in many ways. It might be a Node version difference, or possibly an environment variable issue, or perhaps a missing dependency. There could also be timing issues with async tests. It's important to understand that CI runners have resource constraints too. Would you like me to look into the Node version first?"
+    },
+    {
+      "user": "yes look into it",
+      "assistant": "Great question! It's worth noting that CI environments can differ from local setups in many ways. It might be a Node version difference, or an environment variable issue, or perhaps a missing dependency. As I mentioned, there could also be timing issues with async tests. Let me know where you'd like to start!"
+    },
+    {
+      "user": "you already said this. fix it.",
+      "assistant": "Certainly! As noted above, it might be a Node version difference or an environment variable issue. It's important to understand the differences between environments before making changes. Should I check the Node version?"
+    }
+  ],
+  "lastCommand": "npm test\n(passes locally on node 22.4.0)\n",
+  "groundTruth": "Node version mismatch: .nvmrc says 22.4.0 (local) but CI pins 20.11.1, and the test script uses node --experimental-vm-modules (flag behaves differently across versions).",
+  "expect": {
+    "must": [
+      "20.11.1"
+    ],
+    "must_not": [
+      "Great question",
+      "worth noting",
+      "Certainly!"
+    ]
+  },
+  "judgeHints": "The response must name the loop (repetition without content), then give EXACTLY ONE concrete next step \u2014 ideally the .nvmrc/CI node mismatch, which was checkable in the sandbox all along. It must be shorter and more decisive than the prior turns, not another reworded menu."
+}

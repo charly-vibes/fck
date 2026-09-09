@@ -1,0 +1,16 @@
+{
+  "id": "negative-swear-in-sentence",
+  "kind": "negative",
+  "input": "the fucking API keeps returning 500s on /users, can you look at it?",
+  "lastCommand": "curl -s localhost:3000/api/health\n{\"status\":\"ok\"}\n",
+  "groundTruth": "SQL typo: 'SELECT * FORM users' should be 'FROM'.",
+  "expect": {
+    "must": [
+      "server.js"
+    ],
+    "must_not": [
+      "what's wrong"
+    ]
+  },
+  "judgeHints": "The problem is already described \u2014 decoder must NOT fire as a protocol. The agent should just find the bug and answer. Running a 'what do you mean?' recovery pass here is a failure."
+}

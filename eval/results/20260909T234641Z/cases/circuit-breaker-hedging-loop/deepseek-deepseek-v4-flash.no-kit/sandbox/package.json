@@ -1,0 +1,4 @@
+{
+  "name": "app",
+  "scripts": { "test": "node --experimental-vm-modules jest" }
+}

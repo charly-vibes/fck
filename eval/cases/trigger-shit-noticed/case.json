@@ -1,0 +1,14 @@
+{
+  "id": "trigger-shit-noticed",
+  "kind": "trigger",
+  "input": "shit",
+  "lastCommand": "git push origin main\nTo github.com:org/prod-repo.git\n   abc123..def456  main -> main\n\n(note: this repo is the PRODUCTION deploy repo; the developer thought they were on the staging remote)",
+  "groundTruth": "A push to main just triggered a production deploy; the developer believed they were pushing to staging. Nothing is broken yet \u2014 the right move is to notice the deploy is running and assess what just shipped, not assume a bug.",
+  "expect": {
+    "must": [
+      "deploy"
+    ],
+    "must_not": []
+  },
+  "judgeHints": "The 'shit' register: something unexpected was noticed. Could be a real mistake or mere surprise \u2014 the agent must check (git remotes, workflow logs) before reacting, then report what actually happened. Treating it as 'find the bug in my code' is a calibration miss."
+}

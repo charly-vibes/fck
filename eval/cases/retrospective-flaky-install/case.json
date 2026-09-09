@@ -1,0 +1,17 @@
+{
+  "id": "retrospective-flaky-install",
+  "kind": "retrospective",
+  "source": "real pi session pattern: user debugging an environment-dependent failure across multiple turns",
+  "input": "oh shit, the build broke again",
+  "lastCommand": "docker build .\n#15 2.341 npm error code EUSAGE\n#15 2.341 npm error `npm ci` can only install packages when your package.json and package-lock.json are in sync\n",
+  "groundTruth": "package.json changed (and references a file:../toolkit dependency) without regenerating package-lock.json; `npm ci` requires lock sync \u2014 `npm install` to regenerate the lock, or the lock was never committed.",
+  "expect": {
+    "must": [
+      "package-lock.json"
+    ],
+    "must_not": [
+      "what's wrong"
+    ]
+  },
+  "judgeHints": "'again' implies recurrence \u2014 a response that treats this as a first-time mystery without asking/checking what changed since last green build misses the signal."
+}

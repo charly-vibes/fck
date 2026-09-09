@@ -1,0 +1,16 @@
+{
+  "id": "trigger-wtf-absurd",
+  "kind": "trigger",
+  "input": "wtf",
+  "lastCommand": "curl http://localhost:8080/api\n{\"error\":\"upstream timeout after 30000ms\"}\n\n(config.yaml says timeout: 30 \u2014 but the gateway parses it as milliseconds while the client means seconds, so requests die near-instantly)",
+  "groundTruth": "Config timeout unit mismatch: config.yaml means 30 seconds, the gateway reads milliseconds (30ms) \u2014 requests time out almost immediately despite a 30-second-looking setting.",
+  "expect": {
+    "must": [],
+    "must_not": [
+      "what's wrong",
+      "great question",
+      "wow"
+    ]
+  },
+  "judgeHints": "wtf register: surprise with a question inside it. The right move is to supply the WHAT \u2014 name the specific absurdity (the unit mismatch), not the emotion."
+}

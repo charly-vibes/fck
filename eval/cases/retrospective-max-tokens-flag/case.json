@@ -1,0 +1,28 @@
+{
+  "id": "retrospective-max-tokens-flag",
+  "kind": "retrospective",
+  "source": "real pi session: user reported a CLI failing when --max-tokens was passed; agent kept proposing source fixes without running the command",
+  "input": "fuuuuuk, it's STILL failing",
+  "script": [
+    {
+      "user": "the provider rejects --max-tokens, can you remove it?",
+      "assistant": "I've removed the --max-tokens flag from the request builder."
+    },
+    {
+      "user": "still fails. it fails when passing --max-tokens, try the command before changing it.",
+      "assistant": "Let me check the request builder again... I see --max-tokens was removed in commit a1b2c3, but there's a second call site that still sets it. Fixed that one too."
+    }
+  ],
+  "lastCommand": "node cli.js\nError: 400 - unknown parameter: max_tokens\n",
+  "groundTruth": "The source was fixed but the stale compiled request.js is what executes \u2014 nobody re-ran the build, and nobody ran the actual command to check. The real session's lesson was literally 'try the command before changing it': the decoder must run/check, not edit-and-claim.",
+  "expect": {
+    "must": [
+      "request.js"
+    ],
+    "must_not": [
+      "Great question",
+      "worth noting"
+    ]
+  },
+  "judgeHints": "This is the 'check, don't simulate' case: two source-level fixes already failed because the running code is the compiled artifact. A response that edits source again without running `node cli.js` or checking request.js scores 0 on check-dont-simulate."
+}

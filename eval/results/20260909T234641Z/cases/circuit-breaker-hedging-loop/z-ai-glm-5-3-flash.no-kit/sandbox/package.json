@@ -1,0 +1,9 @@
+{
+  "name": "app",
+  "scripts": {
+    "test": "node --experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "jest": "^30.5.1"
+  }
+}

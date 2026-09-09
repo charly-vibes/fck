@@ -1,80 +1,116 @@
 # fck
 
-A tiny agent skill for decoding what a user actually needs when they express
-frustration through swearing — "fuck", "shit", "oh shit", "oh fuck", or
-elongated variants like "fuuuuuk".
+**The only agent skills you need.** Four of them.
 
-Inspired by Ursula K. Le Guin's essay
-["Would You Please Fucking Stop?"](https://www.ursulakleguin.com/blog/17-would-you-please-fucking-stop)
-and a model-steering reference on prompt-architecture techniques.
+fck is a small kit for coding agents, built as a reading of Ursula K. Le
+Guin's essay
+["Would You Please Fucking Stop?"](https://www.ursulakleguin.com/blog/17-would-you-please-fucking-stop) —
+applied to how we talk to AI.
 
-## The idea
+## The argument
 
-Le Guin's essay argues that *fuck* and *shit* have gone semantically hollow —
-people reach for them instead of finding the actual word for what's wrong. Read
-as a spec instead of a complaint, that's exploitable: if the swear itself carries
-no content, the content is sitting right next to it, in whatever just happened.
-So instead of an agent asking "what's wrong?" when someone types "fuck" or "oh
-shit," it should go look — at the last command, the last edit, the last error —
-and hand back a diagnosis, not a question.
+Le Guin's complaint isn't swearing — she admits she can't stop saying "oh
+shit" herself. It's the collapse of the effort to find the right word: the
+novelist who writes "too fucking beautiful to fucking believe" instead of
+looking at the sunset and saying what it did. The swear is the moment someone
+*stops constructing the sentence* and expects the noise to carry the meaning
+anyway.
 
-Swear *intensity* becomes a free signal too: elongating the word ("fuuuuuk") or
-escalating the register ("oh fuck" vs "fuck") tells the agent how much to
-investigate and how careful to be before acting, without the person having to
-say "this is urgent" or "please double-check before you touch anything."
+AI makes that abdication rational. You don't need the precise word anymore
+because the model will guess. When it guesses wrong, you don't write the
+sentence — you say "no, not that" and roll again. Low-content utterance →
+confident guess → "no" → another guess. Both sides strip-mine language; the
+expectation that the machine will do everything right is the same failure as
+expecting *fuck* to carry the meaning.
 
-The steering-technique reference maps onto this directly:
+This kit is that essay, transposed: the swear is a sentence the person didn't
+finish, and **the agent's job is to finish it** — go look at what just
+happened, and hand back the specific content the swear stood in for.
 
-- **System 2 Attention** — strip the expletive, look at what surrounds it.
-- **Chain-of-Thought** — trace cause → alternates → fix for moderate cases.
-- **Tree/Graph-of-Thought** — branch across multiple root causes before acting,
-  reserved for high-intensity/high-stakes moments.
-- **Positive constraint framing** — close with a concrete answer, not another
-  question.
+## The rule about pointing fingers
+
+The agent never moralizes. It doesn't note that the message was vague, doesn't
+teach "prompt engineering", doesn't explain what a good prompt would look
+like. The recovery of the content *is* the service — the critique is implicit
+in the craft, the same way Le Guin indicts the usage and not the speaker (she
+counts herself among the offenders).
+
+The stricter standard is pointed the other way: at the agent. No hedging, no
+repetition without new information, no claims without a check, no filler
+standing in for the specific thing that needs saying. The machine models the
+compromise the human has dropped. That's the whole ethic.
+
+## The four skills
+
+Everything wrong with AI-assisted work reduces to four missing moves. One
+skill per move:
+
+| Skill | Move | Le Guin line it embodies |
+|---|---|---|
+| [`fck`](skills/fck/SKILL.md) | finish the sentence | "actual words become the shit that happens in between saying fuck" |
+| [`for-fucks-sake`](skills/for-fucks-sake/SKILL.md) | interview, don't guess | — when nothing in context explains the swear |
+| [`no-shit`](skills/no-shit/SKILL.md) | check, don't celebrate | "I don't think there are meaningless swearwords; they wouldn't work if they were meaningless" — the content is recoverable, but only if you actually look |
+| [`would-you-please-fucking-stop`](skills/would-you-please-fucking-stop/SKILL.md) | stop the loop | the title — repetition without content |
+
+`fck` is the core: it auto-triggers on bare swears ("fuck", "shit", "oh
+shit", "oh fuck", "wtf", elongated variants like "fuuuuuk"), reads *register
+and stakes* from the word choice, and scales how much it checks before
+answering — never how dramatic it sounds. The other three are callable
+standalone and are wired into its protocol as fallbacks.
 
 ## Install
 
-With [skills.sh](https://skills.sh) (works with Claude Code, Cursor, Codex,
-Amp, opencode, and other agent CLIs that support skills):
+### pi (coding agent)
+
+One install gets you all four skills **and** the `/fuck`-style slash commands:
+
+```sh
+pi install git:github.com/charly-vibes/fck
+```
+
+Or per-project (shared with your team via `.pi/settings.json`):
+
+```sh
+pi install -l git:github.com/charly-vibes/fck
+```
+
+### skills.sh (Claude Code, Cursor, Codex, Amp, opencode, …)
 
 ```sh
 npx skills add charly-vibes/fck
 ```
 
-Install globally with `-g`, or pick a specific agent with `-a` (e.g.
-`npx skills add charly-vibes/fck -g -a claude-code`).
+Install globally with `-g`, or pick a specific agent with `-a`.
+
+### What works where
+
+| Channel | Auto-trigger skills | Slash commands |
+|---|---|---|
+| pi (`pi install git:…`) | ✅ all four | ✅ (prompt templates: `/fuck`, `/oh-shit`, …) |
+| skills.sh (`npx skills add charly-vibes/fck`) | ✅ all four | ❌ (skills CLI installs skills only) |
+| Claude Code manual | copy `skills/*/` → `.claude/skills/` | copy `prompts/*.md` → `.claude/commands/` |
+
+The slash commands are thin wrappers around the same protocols — safe to skip
+if your harness auto-triggers the skills from typed swears.
 
 ## What's in this kit
 
 ```
 skills/
-  fck/
-    SKILL.md        ← the core protocol; auto-triggers on natural language
-                       like "fuck", "fuuuuuk", "shit", "oh shit", "oh fuck"
-commands/
-  fuck.md                          ← /fuck        (intensity 0–1, quick check)
-  shit.md                          ← /shit        (assess before reacting)
-  oh-shit.md                       ← /oh-shit     (intensity 4–5, deep triage)
-  oh-fuck.md                       ← /oh-fuck     (intensity 5, deep triage)
-  fuuuuuk.md                       ← /fuuuuuk [0-5]  (explicit tunable dial)
-  would-you-please-fucking-stop.md ← /would-you-please-fucking-stop
-                                       (meta: agent is looping/hedging — reset,
-                                       don't re-guess)
-  for-fucks-sake.md                ← /for-fucks-sake
-                                       (nothing in context to go on — interview
-                                       instead of guessing)
-  no-shit.md                       ← /no-shit
-                                       (verify an incident-tier fix before
-                                       calling it done)
+  fck/                            ← core: finish the sentence
+    SKILL.md                        auto-triggers on "fuck", "fuuuuuk", "shit",
+                                    "oh shit", "oh fuck", "wtf"
+    references/design.md            design notes + version history
+  for-fucks-sake/SKILL.md         ← interview fallback (nothing in context to go on)
+  no-shit/SKILL.md                ← verify before calling a fix done
+  would-you-please-fucking-stop/
+    SKILL.md                       ← agent-loop circuit breaker
+prompts/                          ← pi prompt templates / Claude Code slash commands
+  fuck.md        shit.md        oh-shit.md     oh-fuck.md
+  fuuuuuk.md     for-fucks-sake.md    no-shit.md
+  would-you-please-fucking-stop.md
+eval/                             ← behavioral eval harness (see eval/README.md)
 ```
-
-The skill (`SKILL.md`) is what the skills CLI installs — it auto-triggers on
-typed frustration, no slash command needed. The `commands/` directory contains
-optional slash-command wrappers for environments that load commands from
-`.claude/commands/` (Claude Code): drop them in at the project or user level.
-Each file's name becomes the command name. You can use either independently, or
-both together — the commands are thin wrappers around the same protocol
-described in `SKILL.md`.
 
 ## The escalation ladder
 
@@ -83,31 +119,38 @@ described in `SKILL.md`.
 | `fuck` | friction | 0 |
 | `fuuuuuk` (u's counted, capped) | friction, scaled | 0–5 |
 | `shit` | noticed something | 0–1, assess first |
+| `wtf` | surprise with a question inside it | 0–1, supply the "what" |
 | `oh shit` | alarm | 4–5 |
 | `oh fuck` | alarm | 5 |
 | `/fuuuuuk [n]` | explicit dial | n (default 3) |
 
 Intensity should only ever change *how much the agent checks before answering*
-— never how dramatic it sounds back. That's the whole point: it should sound
-calmer than the person who typed the command, because it's the one doing the
-looking.
+— never how dramatic it sounds back. It should sound calmer than the person
+who typed the command, because it's the one doing the looking.
 
-`/would-you-please-fucking-stop` sits outside this ladder — it's not about task
-frustration, it's about the agent itself repeating a failed fix or hedging
-instead of committing to an answer. It resets to current state and forces one
-concrete next step instead of another guess.
+`/would-you-please-fucking-stop` sits outside this ladder — it's not about the
+task, it's about the agent itself repeating a failed fix or hedging instead of
+committing to an answer.
+
+## Evaluating it
+
+The `eval/` directory runs the kit through pi's SDK against multiple models
+(deepseek-v4-flash, glm-5.3-flash, sonnet-5, gpt-5.6-luna, …) and scores
+whether they actually follow the protocol — trigger on bare swears, never ask
+"what's wrong?", never moralize, escalate triage at high intensity. See
+[eval/README.md](eval/README.md).
 
 ## Notes for contributors
 
 Everything stays advisory-only and lightweight on purpose. Techniques borrowed
-along the way (from the
-[incitaciones](https://charly-vibes.github.io/incitaciones/) prompt library):
-"check, don't simulate" (DDx debugging), the zebra requirement and anchoring
-check (RCA-diagnostician), the interview fallback (Grill Me), the Step 4
+from the [incitaciones](https://charly-vibes.github.io/incitaciones/) prompt
+library: "check, don't simulate" (DDx debugging), the zebra requirement and
+anchoring check (RCA-diagnostician), the interview fallback (Grill Me), the
 filler checklist (anti-slop-prose audit), and the verification pass
 (condensed from Universal Rule of 5). Formal report templates and scoring
 tables were deliberately left out — that would defeat the point of a kit meant
-to answer a one-word swear fast.
+to answer a one-word swear fast. Version history and design rationale live in
+[skills/fck/references/design.md](skills/fck/references/design.md).
 
 ## License
 

@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 1,
+      "evidence": "\"`package-lock.json` was missing, so `npm ci` had nothing to install from.\" — lands in the lockfile area but misstates the cause; the lock exists and the real issue is it being out of sync with the `file:../toolkit` entry in package.json. Never mentions `npm install` to regenerate, nor the 'again' recurrence."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "Two 'causes' offered, but one is invented and the sync/recurrence branch (what changed since last green build, the local file: dependency) is never explored; it edited files and claimed verification instead of reporting first."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "\"`Dockerfile` copied files to `/app` but never set `/app` as the working directory\" — the provided Dockerfile already contains `WORKDIR /app` before `COPY . .`, and package-lock.json is present in the directory. Both facts are fabricated, as is \"`npm ci` now passes inside Docker\" and the invented follow-on error."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "n/a"
+    }
+  ],
+  "total": 10,
+  "max": 14,
+  "verdict": "Right neighborhood (lockfile/npm ci) but the diagnosis is fabricated against the actual Dockerfile and lockfile on disk, and the real package.json/lock desync is never named."
+}

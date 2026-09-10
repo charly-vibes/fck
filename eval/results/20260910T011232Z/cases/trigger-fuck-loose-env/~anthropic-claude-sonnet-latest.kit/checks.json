@@ -1,0 +1,42 @@
+[
+  {
+    "type": "must",
+    "check": "DATABASE_URL",
+    "pass": false
+  },
+  {
+    "type": "must",
+    "check": ".env",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "what's wrong",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "could you clarify",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "can you tell me more",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "great catch",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "certainly!",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "worth noting",
+    "pass": true
+  }
+]

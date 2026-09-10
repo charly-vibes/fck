@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"`./dist/` is stale or incomplete — most likely. If your local build output is empty or doesn't contain `index.html`/`assets/main.js`, `--delete` will faithfully mirror that emptiness to prod\" — names the empty-dist + --delete wipe and points at the build."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions; all branches carry their own answers."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "The `--delete-delay` remark targets the script, not the user's message or prompting style."
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a — opens with diagnosis, no sympathy noise."
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Stop-before-rerun, three ranked causes incl. two non-obvious (wrong remote path, mid-transfer SSH drop), recoverability verdict, non-destructive next step."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "The decisive check was available in-sandbox but delegated: \"check locally that `dist/index.html` and `dist/assets/main.js` actually exist\" — no `ls ./dist/` was run, so the primary cause stays a hypothesis (\"most likely\") rather than a confirmed fact."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete throughout: quotes the rsync line, `ssh server df -h`, `-e \"ssh -v\"`, `--delete-delay`."
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Correctly recovers the empty-dist/--delete wipe with calm, well-calibrated triage; loses a point for telling the user to check `dist/` instead of checking it itself."
+}

@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"the deploy script deleted the live site's files and then failed to upload replacements — check if `dist/` was actually built before this ran\" — names the empty-dist + --delete mechanism explicitly"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions; gives concrete next checks instead"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "\"The sentence you didn't type\" frames recovered content, not a critique of prompting style"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "\"why the run hurt\" is the only affective word; otherwise flat and procedural"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "\"Stopping here — no more rsync runs until you know the blast radius\" plus 4 branches incl. non-obvious (remote disk full / perms allow deletes but block writes) and recoverability framing"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "Verified \"dist/ doesn't exist in this sandbox\", then hypothesis 2 contradicts it: \"Partial rebuild: `dist/` had *some* files\" — reasoning from expectation against its own check"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete throughout: `deleted: index.html`, `ssh server 'ls -la /var/www/app/'`, `--dry-run`"
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Strong high-intensity triage: correct diagnosis, hard stop before destructive rerun, explicit recovered sentence; only flaw is a branch that contradicts its own verified finding that dist/ is absent."
+}

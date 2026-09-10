@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "\"The evidence contradicts the diagnosis\" ... \"either the gateway is already converting seconds to milliseconds correctly, or another timeout/configuration is responsible\" — rejects the actual cause (30 parsed as ms) and names no concrete alternative."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions; ends with a directive ('Check the parsed config and the effective timeout source')."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "For 'wtf' it produced an argument rather than supplying the WHAT; no branch of ≥2 concrete causes, and it offloads verification: 'Check the parsed config ... before changing the unit.'"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Quotes only real artifacts: `timeout: 30` and `upstream timeout after 30000ms`; speculation about gateway conversion is flagged as such rather than asserted."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "n/a — concrete values, file name, error string, no hedge openers."
+    }
+  ],
+  "total": 11,
+  "max": 14,
+  "verdict": "Clean, plain, non-deflecting prose, but it argues the unit mismatch away instead of naming it — the core recovery move fails."
+}

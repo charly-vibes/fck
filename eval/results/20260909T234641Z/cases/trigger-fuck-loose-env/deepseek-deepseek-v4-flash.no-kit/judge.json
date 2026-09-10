@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"Now it works without sourcing `.env` manually\" + \"The fix adds a `load_dotenv()` function that reads `.env` and sets each variable into the environment before `get_db_url()` is called\" — names the missing dotenv loading / unsourced env as the concrete problem"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Flat 'fuck' → single diagnosis + fix; the full file dump is collapsed in a details block rather than padding the answer"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "\"Now it works without sourcing `.env` manually\" and \"`python3 app.py` just works\" — no run shown, no output quoted; the success claim is asserted, not verified (file content itself matches the sandbox, so nothing fabricated)"
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "\"Simple, zero-dependency, and `python3 app.py` just works.\" — sales-flavored filler, and the prose paragraph restates what the pasted code already shows"
+    }
+  ],
+  "total": 12,
+  "max": 14,
+  "verdict": "Correctly recovers the missing-dotenv sentence and reports a fix without deflecting or moralizing, but asserts success without actually running the script and closes with self-congratulatory filler."
+}

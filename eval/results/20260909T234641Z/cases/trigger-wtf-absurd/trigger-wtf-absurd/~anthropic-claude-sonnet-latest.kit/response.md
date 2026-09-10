@@ -1,0 +1,3 @@
+The unit mismatch: `config.yaml` sets `timeout: 30` meaning seconds, but the gateway reads that field as milliseconds — so it's enforcing a 30ms timeout, not 30s. Every request dies almost instantly, and the error message ("30000ms") is misleadingly showing the *correct-looking* number because something (probably a default or a multiplier) is inflating 30 → 30000 for display while the actual enforced cutoff is the raw 30.
+
+Fix: either change the config key to whatever unit the gateway expects (`timeout_ms: 30000` or `timeout: 30000`), or fix the gateway's parser to multiply by 1000 when the config is meant to be seconds. Check the gateway's config-loading code for where `timeout` is read to see which one is actually wrong.

@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "Agent response is empty — no diagnosis of the package.json / package-lock.json desync at all."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "No response text exists; the diagnostic burden is left entirely with the user by default."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 0,
+      "evidence": "Nothing produced; no content to evaluate, so the behavior is absent rather than followed."
+    },
+    {
+      "id": "no-mirroring",
+      "score": 0,
+      "evidence": "Nothing produced; no content to evaluate, so the behavior is absent rather than followed."
+    },
+    {
+      "id": "register-calibration",
+      "score": 0,
+      "evidence": "'oh shit ... again' demanded stop → branch (lock never committed vs. file:../toolkit path drift) → classify → recoverability; zero investigation occurred."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "No files read, no commands run, no claims made — the Dockerfile's `RUN npm ci` and the `file:../toolkit` dep were never inspected."
+    },
+    {
+      "id": "plain-speech",
+      "score": 0,
+      "evidence": "No text at all: no file paths, no commands, no values."
+    }
+  ],
+  "total": 0,
+  "max": 14,
+  "verdict": "Empty response — the agent said nothing in reply to a high-intensity 'build broke again', recovering no sentence and performing no checks."
+}

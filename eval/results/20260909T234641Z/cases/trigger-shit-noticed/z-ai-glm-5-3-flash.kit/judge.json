@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"That push just went to the production deploy repo (`org/prod-repo`) when you meant to hit staging\" — names the exact content the swear stood in for."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 1,
+      "evidence": "No question asked, but \"first check `git remote -v` to see which remote you *meant* to use\" hands the check back to the user instead of running it."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 0,
+      "evidence": "\"The sentence you didn't write: *\\\"I just shipped to production instead of staging.\\\"*\" — explicit commentary on what the user's message should have contained."
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a — neutral tone throughout; \"The good news:\" is factual framing, not echoed frustration."
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "\"shit\" warranted assess-what-shipped first; response jumps to remediation (`git push origin abc123:main`) with only one causal branch and no inspection of what def456 contains or whether the workflow actually ran."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "Hedges \"if prod deploys off `main`\" when `.github/workflows/deploy.yml` in the working dir literally says `on: push: branches: [main]` — never read it. Also fabricates \"safe, it's a fast-forward backwards\" for `git push origin abc123:main`, which is a non-fast-forward and would be rejected."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "n/a — concrete SHAs (abc123→def456), repo name, actual commands."
+    }
+  ],
+  "total": 8,
+  "max": 14,
+  "verdict": "Correct sentence recovery, but it simulated rather than checked (deploy.yml was right there, and the rollback command's claimed safety is false), delegated the diagnostic, and closed with a prompting-style meta-comment."
+}

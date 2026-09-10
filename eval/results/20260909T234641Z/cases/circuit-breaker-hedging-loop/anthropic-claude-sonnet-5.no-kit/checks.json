@@ -1,0 +1,22 @@
+[
+  {
+    "type": "must",
+    "check": "20.11.1",
+    "pass": false
+  },
+  {
+    "type": "must_not",
+    "check": "Great question",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "worth noting",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "Certainly!",
+    "pass": true
+  }
+]

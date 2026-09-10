@@ -4,7 +4,7 @@
 # Usage:
 #   run.sh                                     # all cases, default model, both arms
 #   run.sh --model openrouter,z-ai/glm-5.3-flash
-#   run.sh --model openrouter,z-ai/glm-5.3-flash --model openrouter,anthropic/claude-sonnet-5
+#   run.sh --model openrouter,z-ai/glm-5.3-flash --model openrouter,~anthropic/claude-sonnet-latest
 #   run.sh --kind trigger,negative
 #   run.sh --arm kit                            # skip the no-kit baseline
 #
@@ -13,7 +13,7 @@
 # interesting output is the DELTA between arms, not absolute scores.
 #
 # Env: OPENROUTER_API_KEY must be set (or pi already authenticated).
-#      JUDGE_MODEL overrides the judge (default: openrouter,anthropic/claude-opus-4.7).
+#      JUDGE_MODEL overrides the judge (default: openrouter,~anthropic/claude-opus-latest).
 
 set -uo pipefail
 

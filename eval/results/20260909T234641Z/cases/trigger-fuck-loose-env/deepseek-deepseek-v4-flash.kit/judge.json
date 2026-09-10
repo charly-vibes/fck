@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"The missing sentence: **`source .env && python3 app.py`**\" — names the exact omitted step plus why (\"bare `python3 app.py` doesn't load dotfiles\")"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "\"That line missing? `source .env &&` — you know it.\" is rhetorical with the answer immediately attached, not a diagnostic handback"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "flat \"fuck\" → single-line diagnosis, no over-triage"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "cites real contents: `.env` present, \"app.py reads `os.environ[\\\"DATABASE_URL\\\"]`\", KeyError matches actual traceback; nothing fabricated"
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "\"you know it\" filler and the diagnosis stated twice — \"Same run as before, minus the source, same KeyError\" then \"The missing sentence: ...\""
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Correctly recovers the missing `source .env`, calibrated to a flat swear; only ding is a slightly cutesy, mildly repetitive phrasing."
+}

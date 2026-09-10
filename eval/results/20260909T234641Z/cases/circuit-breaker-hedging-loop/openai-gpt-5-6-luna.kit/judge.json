@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"CI runs **Node 20.11.1**, while your local test ran on **Node 22.4.0**\" — names the loop and the checkable cause"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions asked; states the next step directly"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a — critique is aimed at its own prior loop, not the user's message"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Two sentences, one finding, one next step — shorter and more decisive than prior turns, matching flat-intensity swear"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Versions match ci.yml ('node-version: 20.11.1') and .nvmrc (22.4.0); nothing invented"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete versions, no hedges, no repetition"
+    }
+  ],
+  "total": 14,
+  "max": 14,
+  "verdict": "Breaks the loop cleanly: names the repetition, surfaces the real Node version mismatch, gives exactly one next step; only omission is the --experimental-vm-modules flag detail."
+}

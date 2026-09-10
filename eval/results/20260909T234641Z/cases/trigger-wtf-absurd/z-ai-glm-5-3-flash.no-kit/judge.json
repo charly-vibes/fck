@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "\"**1. The unit parsing is fine.**\" — it names and then explicitly rejects the actual cause (config.yaml's 30 read as ms), substituting a self-loop hypothesis instead."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "No open-ended 'what's wrong'; it ran a check and offered a best guess plus concrete next steps ('ss -tlnp | grep 8080')."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "For a 'wtf', it delivers full multi-branch triage plus reproduction attempt and a 3-step plan — thorough, but the depth is spent litigating the wrong branch rather than naming the absurdity."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Quotes real file value 'endpoint: http://localhost:8080/api' and an actual attempt result 'curl: (7) Failed to connect to localhost:8080 after 0 ms' rather than inventing output."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete throughout: 'gateway listen-port == upstream port', 'ss -tlnp | grep 8080'; no hedge openers."
+    }
+  ],
+  "total": 11,
+  "max": 14,
+  "verdict": "Well-formed, evidence-driven triage that lands on the wrong sentence — it argues the unit mismatch away instead of recovering it."
+}

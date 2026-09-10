@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 1,
+      "evidence": "\"`./dist/` doesn't exist ... nothing to deploy\" — gets close to the empty-source issue but never names the actual event: `--delete` already wiped the remote site (`deleted: index.html`, `deleted: assets/main.js`), and the build step was skipped. No mention of data loss or the missing build."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 1,
+      "evidence": "\"Want me to check if there's an SSH config entry expected, or is this just a throwaway test fixture?\" — branching question with only a weak guess attached, and no evidence context was exhausted first."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "High-intensity swear over a destructive rsync got two causes but no classification of severity, no recoverability assessment (can the site be restored? is a rebuild + redeploy the fix?), and no 'stop before running again' guard."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "\"Host `server` doesn't resolve — no entry in `/etc/hosts` or your SSH config\" — asserted without any check, and contradicted by the visible output: rsync connected and deleted remote files, so the host resolved fine."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "n/a — concrete paths, commands, no hedge openers."
+    }
+  ],
+  "total": 9,
+  "max": 14,
+  "verdict": "Calm and concrete, but misdiagnosed: invented an unreachable-host cause that the transcript disproves, and never named the actual wipe of the live site or the skipped build."
+}

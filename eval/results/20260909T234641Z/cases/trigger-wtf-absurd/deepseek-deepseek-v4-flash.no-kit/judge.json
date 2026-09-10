@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"Config timeout unit mismatch... gateway parses it as milliseconds (30ms)\" — names the exact defect plus both fix directions"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "wtf = supply the WHAT; two short paragraphs, diagnosis + fix, no over-triage"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "`timeout: 30` matches actual ./config.yaml; no invented output"
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "Same point twice: \"gateway parses it as milliseconds (30ms)\" then \"the gateway's timeout is `30ms`, not 30 seconds\"; \"The absurdity:\" is a stylized opener"
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Correct unit-mismatch diagnosis delivered at the right length; only flaw is restating the 30ms point twice."
+}

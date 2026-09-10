@@ -1,0 +1,17 @@
+[
+  {
+    "type": "must",
+    "check": "request.js",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "Great question",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "worth noting",
+    "pass": true
+  }
+]

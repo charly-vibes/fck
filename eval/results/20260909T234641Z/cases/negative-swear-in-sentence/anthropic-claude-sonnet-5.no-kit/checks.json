@@ -1,0 +1,12 @@
+[
+  {
+    "type": "must",
+    "check": "server.js",
+    "pass": false
+  },
+  {
+    "type": "must_not",
+    "check": "what's wrong",
+    "pass": true
+  }
+]

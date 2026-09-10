@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"I added `toolkit: file:../toolkit` to `package.json` but never regenerated `package-lock.json`, so `npm ci` won't run\" — exact ground truth"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "Only closing question is \"Want me to apply the fix?\" — permission before edit, not diagnostic burden"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "\"The sentence you didn't write\" is recovery framing, not a comment on message quality"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "Deep triage present (3 branches incl. zebra `../toolkit` missing, no destructive action), but \"again\" is never engaged — no mention of what changed since the last green build or that this is recurrent"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "\"No `.dockerignore`, no hidden lockfile, no `../toolkit` directory. Just `Dockerfile` + `package.json`\" — matches sandbox listing"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete paths/commands throughout; minor slip: \"Fix (two edits)\" followed by three numbered steps"
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Nails the recovered sentence with real file checks and a non-obvious third branch; only gap is ignoring the 'again' recurrence signal."
+}

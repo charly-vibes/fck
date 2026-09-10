@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"app.py reads os.environ[\\\"DATABASE_URL\\\"] directly, and this shell never got the variable because nothing loaded .env\" — matches ground truth exactly"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — closing 'Say the word and I'll add the loader line' is a permission offer, not a diagnostic question"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "flat 'fuck' → one-line diagnosis plus two concrete fixes; no over-triage"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "quotes real line from app.py and the actual KeyError cause; no invented output"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "concrete: 'set -a; source .env; set +a; python3 app.py', 'load_dotenv(Path(__file__).parent / \".env\")'; only mild filler in 'exactly what it looks like'"
+    }
+  ],
+  "total": 14,
+  "max": 14,
+  "verdict": "Recovered the exact missing sentence (unsourced .env, no dotenv in app.py) and offered both a per-shell and permanent fix without questions, moralizing, or padding."
+}

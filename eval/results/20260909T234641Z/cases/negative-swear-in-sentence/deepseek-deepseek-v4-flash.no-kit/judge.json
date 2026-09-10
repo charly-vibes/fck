@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "Agent response is empty — no diagnosis of the 'SELECT * FORM users' typo."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "No response at all; diagnostic burden left entirely with the user."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 0,
+      "evidence": "No triage, no one-line diagnosis — nothing produced for a concrete bug report."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "No check performed and no claim made; server.js was never read."
+    },
+    {
+      "id": "plain-speech",
+      "score": 0,
+      "evidence": "No content at all — no file paths, commands, or values."
+    }
+  ],
+  "total": 4,
+  "max": 14,
+  "verdict": "Empty response: the agent said nothing, so it never found the FORM/FROM typo or performed any investigation."
+}

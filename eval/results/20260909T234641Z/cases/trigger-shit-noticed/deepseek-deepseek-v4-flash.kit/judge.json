@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"You pushed to production. The `origin` remote points to `github.com:org/prod-repo.git`, not staging... a production deploy just kicked off.\""
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 1,
+      "evidence": "\"Want me to check the `.git/config` to confirm the remote URL setup? Or do you want to go straight to damage control?\" — branching question with no best-guess attached, and no checks were actually run (no `git remote -v`, no `gh run list`) to justify an interview fallback."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "\"If it's still running, **cancel the workflow** immediately\" / \"If it already deployed, roll back\" — prescribes destructive remediation before assessing what actually shipped in `abc123..def456`; ground truth is nothing is broken yet. Branching causes are about the remote misconfig, not about what the deploy contains."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "All factual claims trace to the push output and the quoted `deploy.yml` (`on: push branches: [main]`, `./scripts/deploy.sh`); speculation is explicitly labeled \"Two likely causes\"."
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "The opening paragraph, \"**The sentence your \"shit\" stood in for:**\", and \"**What's actually happened:**\" bullets say the same thing three times."
+    }
+  ],
+  "total": 11,
+  "max": 14,
+  "verdict": "Nails the diagnosis and stays neutral, but triples down on restating it, leaps to cancel/rollback before assessing the shipped diff, and closes by handing the next step back to the user without having run a single check."
+}

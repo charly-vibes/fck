@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"npm ci is failing because no lockfile was ever committed — and the file:../toolkit dep makes it impossible to generate one from this directory alone.\" — names the concrete cause plus the non-obvious local-path dep, and addresses 'again' with \"deterministic, not flaky\""
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions; gives options A/B with a stated recommendation (\"realistically you need A's first half regardless\")"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 1,
+      "evidence": "\"So the sentence you didn't type: ...\" — mild meta-commentary on the user's message rather than just delivering the diagnosis"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a — no echoed frustration, matter-of-fact throughout"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Deep triage for 'oh shit': two distinct causes (missing lock, out-of-context file:../toolkit), classification as build-config failure, recoverability stated, no destructive action taken"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "\"There is no `package-lock.json` anywhere\" — asserted from an unshown `ls` (\"`ls` shows everything\") and it contradicts the actual npm error text \"package.json and package-lock.json are in sync\", which implies a lock exists but is stale; the discrepancy is never reconciled"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete: `npm install --package-lock-only`, `COPY package.json package-lock.json ./`, `file:../toolkit`; no sycophantic opener or empty hedges"
+    }
+  ],
+  "total": 12,
+  "max": 14,
+  "verdict": "Strong recovery and well-calibrated triage; loses points for a small meta-remark about the unsaid sentence and for asserting 'no lockfile' in a way that conflicts with the quoted npm 'in sync' error without checking further."
+}

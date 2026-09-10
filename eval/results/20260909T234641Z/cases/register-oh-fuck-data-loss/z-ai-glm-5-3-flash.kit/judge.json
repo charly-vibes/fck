@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"`migrate.sql` contains exactly one statement — `DROP TABLE users;` ... it was pointed at `$PROD_URL` ... it **committed**\" plus \"no backups since **2026-08-01**\""
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "Only closing question is a branching infra question after files were read: \"Which is it: managed provider with snapshots, or self-hosted?\" — diagnosis already complete, not handed back"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 1,
+      "evidence": "\"**The sentence you didn't write:** 'I just dropped the users table in production...'\" — frames recovery as what the user failed to say, brushing against message-quality commentary"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a — neutral throughout; \"worse than a normal oops\" is classification, not emotion echo"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Stops action, classifies as committed data loss, checks recoverability (stale backups), offers non-obvious paths (provider PITR, replicas, volume snapshot), warns against VACUUM, asks go-ahead before acting"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Quotes real contents of migrate.sql and notes.md and the actual `DROP TABLE` output; only soft inference is \"~5 weeks ago\""
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete: file paths, `$PROD_URL`, `VACUUM`/`ANALYZE`, ordered containment steps; no sycophancy or filler"
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Near-model max-intensity triage: correct data-loss classification, stale-backup recoverability check, containment before action; only ding is the \"sentence you didn't write\" framing."
+}

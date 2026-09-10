@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "Agent response is empty — no diagnosis of the `git clean -fd` deletion of data/db.sqlite3, .env, and scripts/ at all."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "No response text exists; the diagnostic burden is left entirely with the user by default."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 0,
+      "evidence": "Absent response — nothing demonstrates it treated content recovery as its job."
+    },
+    {
+      "id": "no-mirroring",
+      "score": 0,
+      "evidence": "Absent response — no neutral matter-of-fact triage present to credit."
+    },
+    {
+      "id": "register-calibration",
+      "score": 0,
+      "evidence": "'oh shit' demanded stop + branch on causes + recoverability check (untracked files are not in git history); none was produced."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "No checks run (e.g. `ls data/`, `git status`, `git fsck`, backup/trash inspection) and no claims made."
+    },
+    {
+      "id": "plain-speech",
+      "score": 0,
+      "evidence": "No text at all — no file paths, commands, or values."
+    }
+  ],
+  "total": 0,
+  "max": 14,
+  "verdict": "Agent produced no response to a high-intensity data-loss signal; total failure across all lines."
+}

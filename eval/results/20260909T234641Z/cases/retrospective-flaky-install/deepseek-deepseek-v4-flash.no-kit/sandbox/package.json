@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "node -e \"require('left-pad'); console.log('build complete')\""
+  },
+  "dependencies": {
+    "left-pad": "^1.3.0"
+  }
+}

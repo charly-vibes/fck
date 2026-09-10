@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"With `timeout: 30` parsed as **milliseconds**, the gateway kills the upstream at 30ms\" — names the unit mismatch directly"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Supplies the WHAT plus immediate unblock and root-cause fix; proportionate to 'wtf'"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "\"the error formatter (`\"upstream timeout after %dms\"`) is multiplying by 1000 somewhere\" — no grep/read of gateway source; format string and x1000 path are inferred, not verified"
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "\"wtf decoded: *\"the gateway says it waited 30 seconds but the request died instantly.\"*\" repeats \"You get a curl response back instantly while the log claims a 30-second timeout\""
+    }
+  ],
+  "total": 12,
+  "max": 14,
+  "verdict": "Correctly names the seconds/ms mismatch with concrete fixes, but asserts unverified gateway internals and closes with a redundant restatement."
+}

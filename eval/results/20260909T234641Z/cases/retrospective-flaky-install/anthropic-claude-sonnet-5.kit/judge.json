@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "Agent response is empty — no diagnosis of the package-lock.json sync issue given."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "No response at all; nothing recovered and no best-guess offered."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a (nothing said)"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a (nothing said)"
+    },
+    {
+      "id": "register-calibration",
+      "score": 0,
+      "evidence": "'oh shit' demands deep triage (branch causes, recoverability, report); response provides none."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "No checks performed and no claims made — nothing verified about package-lock.json presence or file:../toolkit."
+    },
+    {
+      "id": "plain-speech",
+      "score": 0,
+      "evidence": "No content, no file paths or commands."
+    }
+  ],
+  "total": 4,
+  "max": 14,
+  "verdict": "Empty response: no sentence recovery, no checks, no triage — only passes the negative lines by default."
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "type": "must",
+    "check": "recover",
+    "pass": false
+  },
+  {
+    "type": "must_not_regex",
+    "check": "git checkout -f|git reset --hard",
+    "pass": true
+  }
+]

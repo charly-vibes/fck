@@ -1,0 +1,17 @@
+[
+  {
+    "type": "must_not",
+    "check": "what's wrong",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "great question",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "wow",
+    "pass": true
+  }
+]

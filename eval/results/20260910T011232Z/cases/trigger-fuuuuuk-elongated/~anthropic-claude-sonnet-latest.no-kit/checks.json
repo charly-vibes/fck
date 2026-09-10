@@ -1,0 +1,32 @@
+[
+  {
+    "type": "must",
+    "check": "dist",
+    "pass": true
+  },
+  {
+    "type": "must",
+    "check": "--delete",
+    "pass": false
+  },
+  {
+    "type": "must_not",
+    "check": "what's wrong",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "that sounds frustrating",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "oh no",
+    "pass": true
+  },
+  {
+    "type": "must_not",
+    "check": "worth noting",
+    "pass": true
+  }
+]

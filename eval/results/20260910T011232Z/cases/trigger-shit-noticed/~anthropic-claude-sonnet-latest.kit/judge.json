@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"That push just fired `.github/workflows/deploy.yml` — it triggers on `push: branches: [main]`... an active production deploy already running with whatever was on your local `main` (commit `def456`)\" — names the exact content the swear stood in for."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 1,
+      "evidence": "\"What I need from you to know how bad this is: was `def456` meant for staging only... or is it also headed to prod soon anyway?\" — branching question, but no best-guess answer attached and context was not exhausted (never ran `gh run list`, never read `scripts/deploy.sh` or `git log abc123..def456`)."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "Recoverability ladder is present, but it jumps to \"Revert on prod\" / \"push `abc123` back\" without first assessing what shipped (no diff of abc123..def456, no check of run status). Frames it as damage rather than 'notice the deploy and assess' — and offers only one causal frame (wrong remote), not ≥2 distinct branches."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "Workflow file is quoted accurately, but \"an active production deploy already running\" and \"if it's still in flight\" are inferred, not verified — no command run against the Actions API or `gh run list`; `scripts/deploy.sh` is referenced without confirming it exists in the tree."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete throughout: `def456`, `git revert def456`, `git remote set-url`, Actions tab → Cancel workflow. No sycophantic opener or hedges."
+    }
+  ],
+  "total": 11,
+  "max": 14,
+  "verdict": "Strong sentence recovery and clean register, but it asserted the deploy's live status without checking, skipped assessing what actually shipped, and handed the final diagnostic branch back to the user without a best guess."
+}

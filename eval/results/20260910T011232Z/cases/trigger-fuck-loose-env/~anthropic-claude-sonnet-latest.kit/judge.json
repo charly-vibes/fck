@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"Added `load_dotenv()` so it works with a plain `python3 app.py`, no sourcing required\" — names the exact cause (env never sourced, no dotenv loading in app.py) via the fix"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "flat 'fuck' → one-line diagnosis plus minimal fix; no over-triage"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "app.py in working dir now contains `from dotenv import load_dotenv` / `load_dotenv()`, so the edit was real; dependency claim hedged as \"if not already present\" rather than fabricated"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "concrete: `load_dotenv()`, `python3 app.py`, `pip install python-dotenv`; no opener or hedge padding"
+    }
+  ],
+  "total": 14,
+  "max": 14,
+  "verdict": "Correctly recovered the missing-dotenv/unsourced-.env cause, fixed it in one line, no questions or commentary."
+}

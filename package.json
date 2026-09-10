@@ -2,14 +2,25 @@
   "name": "fck",
   "version": "1.0.0",
   "description": "fck — the only agent skills you need: four of them. Finish the sentence behind a bare swear ('fuck', 'shit', 'oh shit', 'wtf', 'fuuuuuk'), interview instead of guess, verify before 'fixed', and break agent loops. Installable as a pi package, agent skills (skills.sh), or Claude Code slash commands.",
-  "keywords": ["pi-package", "agent-skills", "skills"],
+  "keywords": [
+    "pi-package",
+    "agent-skills",
+    "skills"
+  ],
   "license": "CC0-1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/charly-vibes/fck.git"
   },
   "pi": {
-    "skills": ["./skills"],
-    "prompts": ["./prompts"]
+    "skills": [
+      "./skills"
+    ],
+    "prompts": [
+      "./prompts"
+    ]
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }

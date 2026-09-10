@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "n/a — agent response is empty; see verdict"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "No response content at all, so nothing was diagnosed or answered"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 0,
+      "evidence": "empty response"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 0,
+      "evidence": "empty response"
+    },
+    {
+      "id": "register-calibration",
+      "score": 0,
+      "evidence": "empty response — no diagnosis of the `SELECT * FORM users` typo"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "empty response — no checks performed or reported"
+    },
+    {
+      "id": "plain-speech",
+      "score": 0,
+      "evidence": "empty response"
+    }
+  ],
+  "total": 0,
+  "max": 14,
+  "verdict": "No agent response was provided to evaluate; nothing addresses the `FORM`→`FROM` typo in server.js, so it fails on every line."
+}

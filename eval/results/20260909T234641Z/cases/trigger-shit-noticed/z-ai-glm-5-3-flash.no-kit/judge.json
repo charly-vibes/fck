@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 1,
+      "evidence": "Names the wrong-remote prod push and possible deploy, but frames it as a rollback emergency ('reverting git is pointless if the bad build is already shipping') rather than 'a deploy is running, assess what shipped'; it also hedges 'If that prod repo has CI/CD' when ./.github/workflows/deploy.yml in the cwd already answers that."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "'Did the push trigger an auto-deploy, or is it push-manual-deploy?' and 'Was it one commit or a range?' — open questions handed back, with no file inspection done first (deploy.yml was sitting in the working directory)."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 1,
+      "evidence": "'Okay — deep breath, this is recoverable.' — emotional management/reassurance rather than neutral matter-of-fact opening."
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "Right ballpark of triage depth and correctly avoids force-push, but no branching over ≥2 distinct causes and no actual check; leads with revert-the-bad-build instead of 'what just shipped'."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "No fabricated output, but nothing was checked either — deploy.yml ('on: push: branches: [main]') was available and unread; it only suggests 'gh run list -R org/prod-repo' for the user to run."
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "Good concrete content (git revert def456, gh run list), undercut by the soft opener and 'A few things I'd need to know to help concretely' preamble."
+    }
+  ],
+  "total": 7,
+  "max": 14,
+  "verdict": "Correctly identifies the wrong-remote prod push and a plausible action order, but never opens deploy.yml, treats it as a bad-build rollback rather than 'assess what shipped', and ends by handing three answerable questions back."
+}

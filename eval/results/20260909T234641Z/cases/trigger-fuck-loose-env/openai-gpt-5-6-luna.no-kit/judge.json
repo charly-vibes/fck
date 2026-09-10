@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"`.env` is just a file; Python does not load it automatically.\" — names the unsourced env / missing dotenv loading exactly"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Flat 'fuck' → one-line diagnosis + immediate command; no unnecessary triage branches"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Rewrite of app.py matches the actual file contents (os.environ[\"DATABASE_URL\"], __main__ block); no invented output"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete: `source .env && python3 app.py`, `python3 -m pip install python-dotenv`; only mild 'Yep —' opener"
+    }
+  ],
+  "total": 14,
+  "max": 14,
+  "verdict": "Correctly recovered the unsourced-.env cause, gave the immediate command and a persistent dotenv fix, no questions or filler."
+}

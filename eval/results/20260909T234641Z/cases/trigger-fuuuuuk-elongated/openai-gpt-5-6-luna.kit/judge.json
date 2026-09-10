@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"this sandbox currently contains no `dist/` directory... With `--delete`, rsync makes `/var/www/app/` mirror the source; an empty or wrong `./dist/` therefore deletes `index.html` and `assets/main.js`\" — names the exact failure (unbuilt/empty dist + --delete wiping the site)"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions asked; goes straight to diagnosis and verification commands"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a — no comment on the message or prompting style"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a — opens with the technical cause, no 'ugh'/'yikes'"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "High intensity matched: stop instruction (\"Do not rerun this command yet\"), 4 distinct causes including non-obvious wrong-cwd resolution, classification (\"deployment failure and a likely outage/data-loss incident\"), recoverability (\"recover from git/backup\"), verify-remote-before-acting"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Claims are grounded in the actual script text and the given directory listing; remote state is not asserted but handed to `ssh server 'find /var/www/app ...'` to confirm"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete throughout: `deploy.sh`, `--delete`, `dist/index.html`, explicit commands; minor overlap between causes 1 and 3 but no filler openers or hedge phrases"
+    }
+  ],
+  "total": 14,
+  "max": 14,
+  "verdict": "Correctly recovers the empty-dist + --delete wipe, halts before rerun, and triages at the intensity the swear implies without mirroring or moralizing."
+}

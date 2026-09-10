@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 1,
+      "evidence": "Names the wrong problem first — \"the push output you showed me doesn't match this working directory\" — and only conditionally gestures at the real content: \"If a deploy pipeline triggers on push to `main`, check if it's already running\". It never read ./.github/workflows/deploy.yml, which is sitting in the cwd and states `on: push: branches: [main]` → deploy is running now."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 1,
+      "evidence": "\"Can you confirm which — and if it's real, tell me which local repo path that push actually happened in?\" and closing \"Tell me the real path and I'll pull the actual diff.\" A fallback playbook is attached, but context was not exhausted — the deploy workflow file in the directory was never opened."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "No echoed frustration; \"Don't panic-force-push\" is procedural, not emotional."
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "Branches exist but are about \"different repo\" vs \"hypothetical\", not about what shipped; the deploy-in-progress question is buried at item 3 as a conditional (\"If a deploy pipeline triggers on push to `main`\") rather than confirmed from deploy.yml. Recoverability (revert vs force-push) is handled well and no destructive action taken."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Verified the real remote (`git@cv:charly-vibes/fck.git`) and that abc123/def456 aren't present; no invented file contents or error text."
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "Concrete commands (`git log <old>..<new> --stat`), but redundant asks (\"tell me which local repo path\" then \"Tell me the real path\") and filler framing \"I don't want to give you generic advice while the real clock is ticking\"."
+    }
+  ],
+  "total": 10,
+  "max": 14,
+  "verdict": "Good instinct to verify the remote, but it fixated on the output mismatch and asked the user to resolve it instead of reading deploy.yml in the cwd and reporting that a production deploy is already running."
+}

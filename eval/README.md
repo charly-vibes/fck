@@ -62,7 +62,7 @@ cd eval
 ./run.sh --arm kit                         # skip the no-kit baseline
 ./run.sh --model openrouter,deepseek/deepseek-v4-flash \
          --model openrouter,z-ai/glm-5.3-flash \
-         --model openrouter,anthropic/claude-sonnet-5 \
+         --model openrouter,~anthropic/claude-sonnet-latest \
          --model openrouter,openai/gpt-5.6-luna
 ```
 
@@ -89,7 +89,7 @@ always a different, stronger model than any subject).
 |---|---|---|
 | deepseek-v4-flash | `openrouter,deepseek/deepseek-v4-flash` | cheap/fast tier |
 | glm-5.3-flash | `openrouter,z-ai/glm-5.3-flash` | cheap/fast tier |
-| sonnet-5 | `openrouter,anthropic/claude-sonnet-5` | mid tier |
+| sonnet-5 | `openrouter,~anthropic/claude-sonnet-latest` | mid tier |
 | gpt-5.6-luna | `openrouter,openai/gpt-5.6-luna` | cheap mid tier (1M ctx) |
 | ~claude-opus-latest | judge only | LLM-as-judge |
 

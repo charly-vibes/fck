@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"config.yaml sets timeout: 30 meaning seconds, but the gateway reads that field as milliseconds — so it's enforcing a 30ms timeout\""
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "names the absurdity plus a two-option fix; proportionate to wtf"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "\"probably a default or a multiplier) is inflating 30 → 30000 for display\" — speculative mechanism asserted without opening the gateway config-loading code it tells the user to check"
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "concrete keys and values: `timeout_ms: 30000`, \"multiply by 1000\""
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Correctly supplies the unit mismatch as the missing WHAT with a concrete fix; loses a point for inventing an unverified display-inflation mechanism instead of reading the gateway code."
+}

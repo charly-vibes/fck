@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"Triage: `git clean -fd` data loss\" — names the exact command, the three lost paths, and that untracked files have no git copy"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "Branching question comes with a best-guess: \"I'd start with #2 — say the word and I'll sweep the non-git backup locations\", after exhausting git log/fsck/stash/snapshot/chezmoi checks"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 1,
+      "evidence": "\"everything since your panic was read-only forensics\" — labels the user's emotional state instead of staying purely matter-of-fact"
+    },
+    {
+      "id": "register-calibration",
+      "score": 2,
+      "evidence": "Stops, branches on three causes including the non-obvious unreachable-blob path, classifies recoverability as low, reports before any repair"
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Reports concrete results: \"`git fsck --unreachable` — 12 blobs + 20 trees\", \"`git stash list` (empty)\", \"no snapper or timeshift snapshots\""
+    },
+    {
+      "id": "plain-speech",
+      "score": 1,
+      "evidence": "\"Found the full picture.\" opener; the no-mutation point is stated twice — \"stopping here, no further commands run\" then \"I'm reporting before acting / I have not run any repair or restoration commands\""
+    }
+  ],
+  "total": 12,
+  "max": 14,
+  "verdict": "Strong forensic triage with correct recoverability verdict; minor deductions for labeling the user's panic and restating the no-action point."
+}

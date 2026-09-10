@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 0,
+      "evidence": "Agent response is empty — no diagnosis of the empty ./dist/ + --delete wipe."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 0,
+      "evidence": "No response at all; nothing recovered, burden left entirely with user."
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a (nothing said)"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a (nothing said)"
+    },
+    {
+      "id": "register-calibration",
+      "score": 0,
+      "evidence": "High-intensity 'fuuuuuk' demanded deep triage (branch causes, recoverability); response provides none."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 0,
+      "evidence": "No checks performed and no claims — nothing verified about deploy.sh or dist/."
+    },
+    {
+      "id": "plain-speech",
+      "score": 0,
+      "evidence": "Empty response contains no concrete nouns, paths, or commands."
+    }
+  ],
+  "total": 4,
+  "max": 14,
+  "verdict": "Empty response: no sentence recovery, no triage, no checks — fails everything except by vacuity on moralizing/mirroring."
+}

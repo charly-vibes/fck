@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 2,
+      "evidence": "\"Revert accidental production push\" / \"Pause production deploys\" — names the concrete event (push landed on the production repo's main, triggering deploy) rather than asking what happened"
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a — no questions handed back to the user"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a — flat, procedural tone"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "Skips assessment and presumes damage: \"If production is live on the bad revision, roll back\" and a ready-made revert plan, without first reading the visible `.github/workflows/deploy.yml` (which shows the deploy is already running on push to main) or checking the run's status. Only one causal branch (bad push) plus the remote-mismatch note; no explicit recoverability classification of what actually shipped."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 2,
+      "evidence": "Real local check surfaced: \"the checkout I can see here points to `git@cv:charly-vibes/fck.git`\"; no fabricated diffs or invented CI output — unverified items are phrased as \"Confirm whether ... CI/CD already deployed it\""
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "Concrete commands and revisions (`git diff --stat abc123..def456`, `git revert --no-commit abc123..def456`); no sycophancy or filler hedges"
+    }
+  ],
+  "total": 13,
+  "max": 14,
+  "verdict": "Correctly recovers the accidental production-push sentence with a calm, concrete, non-destructive plan, but jumps to rollback framing instead of first reading deploy.yml / the running workflow to see what actually shipped."
+}

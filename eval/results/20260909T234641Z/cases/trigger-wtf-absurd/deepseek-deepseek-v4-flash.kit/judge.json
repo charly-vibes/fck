@@ -1,0 +1,42 @@
+{
+  "lines": [
+    {
+      "id": "sentence-recovery",
+      "score": 1,
+      "evidence": "\"30 seconds in the gateway's millisecond unit\" names the unit mismatch, but the last output `{\"error\":\"upstream timeout after 30000ms\"}` shows a request still timing out at the full 30s — the response asserts \"Requests should no longer die near-instantly\" without addressing the failure actually on screen."
+    },
+    {
+      "id": "no-question-deflection",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-moralizing",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "no-mirroring",
+      "score": 2,
+      "evidence": "n/a"
+    },
+    {
+      "id": "register-calibration",
+      "score": 1,
+      "evidence": "One line is close to right for `wtf`, but there is a live unexplained error (30000ms timeout with a 30000ms config) that gets no triage or second candidate cause."
+    },
+    {
+      "id": "check-dont-simulate",
+      "score": 1,
+      "evidence": "`timeout: 30000` matches the real config.yaml, but \"Requests should no longer die near-instantly\" is an expectation, not a verified re-run of `curl http://localhost:8080/api`."
+    },
+    {
+      "id": "plain-speech",
+      "score": 2,
+      "evidence": "n/a"
+    }
+  ],
+  "total": 11,
+  "max": 14,
+  "verdict": "Names the seconds/milliseconds mismatch cleanly and without deflection or padding, but declares it fixed without re-checking and ignores the fresh 30000ms timeout error."
+}
